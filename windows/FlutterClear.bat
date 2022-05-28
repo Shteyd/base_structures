@@ -1,6 +1,6 @@
 @echo off
 
-set /p name="Enter package name: "
+SET /p name="Enter package name: "
 
 IF EXIST .\%name% CD %name%
 CD .\lib

@@ -1,20 +1,20 @@
 @echo off
 
-set help = false
-set new = false
+SET help = false
+SET new = false
 
-IF "%1" == "-h" set help=true
-IF "%1" == "--help" set help=true
-if "%help%" == "true" GOTO get_help
+IF "%1" == "-h" SET help=true
+IF "%1" == "--help" SET help=true
+IF "%help%" == "true" GOTO get_help
 
-set /p name="Enter project name: "
+SET /p name="Enter project name: "
 
-IF "%1" == "-n" set new=true
-IF "%1" == "--new" set new=true
+IF "%1" == "-n" SET new=true
+IF "%1" == "--new" SET new=true
 if "%new%" == "true" GOTO new_project
 
 GOTO project
-exit
+EXIT
 
 
 :new_project
@@ -41,7 +41,7 @@ MKDIR .\domain\features
 MKDIR .\presentation\pages
 MKDIR .\presentation\widgets
 
-exit
+EXIT
 
 
 :get_help
@@ -54,4 +54,4 @@ echo:
 echo without flags
 echo    Create base struct in project.
 echo:
-exit
+EXIT
