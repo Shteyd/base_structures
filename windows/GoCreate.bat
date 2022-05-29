@@ -2,6 +2,7 @@
 
 SET help = false
 SET new = false
+SET gin = false
 
 
 IF "%1" == "-h" SET help=true
@@ -11,9 +12,17 @@ IF "%help%" == "true" GOTO get_help
 
 SET /p name="Enter package name: "
 
+IF "%1" == "-g"  SET gin=true
+IF "%1" == "--gin" SET gin=true
+IF "%2" == "-g"  SET gin=true
+IF "%2" == "--gin" SET gin=true
 
-IF "%1" == "-n" SET new=true
+
+IF "%1" == "-n"  SET new=true
 IF "%1" == "--new" SET new=true
+IF "%2" == "-n"  SET new=true
+IF "%2" == "--new" SET new=true
+
 IF "%new%" == "true" GOTO new_pkg
 
 
@@ -47,6 +56,13 @@ echo.>.\docker-compose.yml
 echo.>.\DockerFile
 echo # %name%>.\README.md
 
+@REM get few packages:
+go get -u github.com/joho/godotenv
+go get -u github.com/sirupsen/logrus
+go get -u github.com/spf13/viper
+go get -u github.com/jmoiron/sqlx
+if "%gin%" == "true" go get -u github.com/gin-gonic/gin
+
 EXIT
 
 :get_help
@@ -55,6 +71,9 @@ echo    Prints out the help menu.
 echo:
 echo -n, --new
 echo    Create new project.
+echo:
+echo -g, --gin
+echo    Create app with GIN
 echo:
 echo without flags
 echo    Create base struct in project.
