@@ -2,10 +2,10 @@
 
 ### How does it work?
 1. Open your projects folder (Example: .\Documents\Github)
-2. Put the .bat file you need in the directory
-3. In CMD.exe launch this file (Example: .\GoCreate.new)
+2. Put the .bat/.sh file you need in the directory
+3. In CMD.exe launch this file (Example: .\GoCreate.bat)
 
-### What packages are being installed?
+### What packages for GoLang are being installed?
 - godotenv
 - logrus
 - viper
