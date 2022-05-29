@@ -1,4 +1,4 @@
-# Batch scripts to generate base project structures
+# Batch / Bash scripts to generate base project structures
 
 ### How does it work?
 1. Open your projects folder (Example: .\Documents\Github)
