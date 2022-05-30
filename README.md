@@ -10,7 +10,7 @@
 - logrus
 - viper
 - sqlx
-- gin (Optionally, enabled with the -g/--gin flag)
+- gin
 
 ### Flags
 Some scripts have flags. For help, enter the name of the script followed by -h / --help (Example: .\GoCreate.bat -h)
